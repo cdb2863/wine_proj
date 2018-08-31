@@ -5,8 +5,9 @@
     <title>Detail</title>
 </head>
 <body>
-    {{ wine }}
+    <h1>{{ wine }}</h1>
     {% if tastings %}
+        <h2>Recorded Tastings</h2>
         <ul>
             {% for t in tastings %}
                 <li>{{ t.date }}</li>
