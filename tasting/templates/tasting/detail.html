@@ -13,15 +13,22 @@
     <title>Detail</title>
 </head>
 <body>
-    <h1>{{ wine }}</h1>
-    {% if tastings %}
-        <h2>Recorded Tastings</h2>
-        <ul class="list-group">
+
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ wine }}</h1>
+        </div>
+        {% if tastings %}
+            <h2>Recorded Tastings</h2>
+            <ul class="list-group">
             {% for t in tastings %}
                 <li class="list-group-item">{{ t.date }}</li>
             {% endfor %}
-        </ul>
+            </ul>
+        {% endif %}
+    </div>
 
-    {% endif %}
+
+
 </body>
 </html>

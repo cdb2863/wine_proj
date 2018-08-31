@@ -13,13 +13,18 @@
     <title>WineApp</title>
 </head>
 <body>
-    <h1>Registered Wines</h1>
-    {% if wines %}
-        <ul class="list-group">
-            {% for w in wines %}
-                <li class="list-group-item"><a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a></li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+    <div class="container">
+        <div class="page-header">
+                <h1>Registered Wines</h1>
+        </div>
+        {% if wines %}
+            <ul class="list-group">
+                {% for w in wines %}
+                    <li class="list-group-item"><a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
 </body>
 </html>
