@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'theme.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Tasting Notes</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Tasting Notes</h1>
+        </div>
+        <div class="jumbotron">
+            <dt>Vineyard</dt>
+            <dd>{{ tasting.wine.Vineyard }}</dd>
+            <dt>Name</dt>
+            <dd><a href="/wine/{{ tasting.wine.id }}">{{ tasting.wine.Name }} ({{ tasting.wine.Vintage }})</a></dd>
+            <dt>Tasting Date</dt>
+            <dd>{{ tasting.date }}</dd>
+            <dt>Color</dt>
+            <dd>{{ tasting.color }}</dd>
+            <dt>Clarity</dt>
+            <dd>{{ tasting.clarity }}</dd>
+            <dt>Nose</dt>
+            <dd>{{ tasting.nose }}</dd>
+            <dt>Body</dt>
+            <dd>{{ tasting.body }}</dd>
+            <dt>Acidity</dt>
+            <dd>{{ tasting.acidity }}</dd>
+            <dt>Tannin</dt>
+            <dd>{{ tasting.tannin }}</dd>
+            <dt>Sweetness</dt>
+            <dd>{{ tasting.sweetness }}</dd>
+            <dt>Fruitiness</dt>
+            <dd>{{ tasting.fruitiness }}</dd>
+            <dt>Finish</dt>
+            <dd>{{ tasting.finish }}</dd>
+            <dt>Did Like</dt>
+            <dd>{{ tasting.did_like }}</dd>
+            <dt>Worth Price</dt>
+            <dd>{{ tasting.worth_price }}</dd>
+            <dt>Would Buy Again</dt>
+            <dd>{{ tasting.would_buy_again }}</dd>
+        </div>
+
+
+    </div>
+</body>
+</html>

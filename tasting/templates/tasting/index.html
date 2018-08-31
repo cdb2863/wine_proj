@@ -20,7 +20,9 @@
         {% if wines %}
             <ul class="list-group">
                 {% for w in wines %}
-                    <li class="list-group-item"><a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a></li>
+                    <li class="list-group-item">
+                        <a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a>
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
