@@ -15,9 +15,9 @@
 <body>
     <h1>Registered Wines</h1>
     {% if wines %}
-        <ul>
+        <ul class="list-group">
             {% for w in wines %}
-                <li><a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a></li>
+                <li class="list-group-item"><a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a></li>
             {% endfor %}
         </ul>
     {% endif %}
