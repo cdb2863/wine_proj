@@ -8,7 +8,7 @@
     {% if wines %}
         <ul>
             {% for w in wines %}
-                <li>{{ w.Name }} ({{ w.Vintage }})</li>
+                <li><a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a></li>
             {% endfor %}
         </ul>
     {% endif %}
