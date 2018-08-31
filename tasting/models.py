@@ -15,6 +15,7 @@ class Wine(models.Model):
 
 class Tasting(models.Model):
     wine = models.ForeignKey(Wine, on_delete=models.CASCADE)
+    date = models.DateTimeField()
     color = models.CharField(max_length=200)
     clarity = models.CharField(max_length=200)
     nose = models.CharField(max_length=200)
@@ -28,6 +29,10 @@ class Tasting(models.Model):
     did_like = models.BooleanField()
     worth_price = models.BooleanField()
     would_buy_again = models.BooleanField()
+
+    def __str__(self):
+        rtn = "{} on {}".format(self.wine.Name, self.date)
+        return rtn
 
 
 '''
