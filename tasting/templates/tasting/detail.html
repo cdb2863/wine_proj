@@ -22,7 +22,9 @@
             <h2>Recorded Tastings</h2>
             <ul class="list-group">
             {% for t in tastings %}
-                <li class="list-group-item">{{ t.date }}</li>
+                <li class="list-group-item">
+                    <a href="/wine/tasting_detail/{{ t.id }}">{{ t.date }}</a>
+                </li>
             {% endfor %}
             </ul>
         {% endif %}

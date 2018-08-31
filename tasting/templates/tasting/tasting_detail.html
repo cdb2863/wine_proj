@@ -10,23 +10,46 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <title>WineApp</title>
+    <title>Tasting Notes</title>
 </head>
 <body>
     <div class="container">
         <div class="page-header">
-                <h1>Registered Wines</h1>
+            <h1>Tasting Notes</h1>
         </div>
-        {% if wines %}
-            <ul class="list-group">
-                {% for w in wines %}
-                    <li class="list-group-item">
-                        <a href="/wine/{{ w.id }}">{{ w.Name }} ({{ w.Vintage }})</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
 
+        <dt>Vineyard</dt>
+        <dd>{{ tasting.wine.Vineyard }}</dd>
+        <dt>Name</dt>
+        <dd>{{ tasting.wine.Name }} ({{ tasting.wine.Vintage }})</dd>
+        <dt>Tasting Date</dt>
+        <dd>{{ tasting.date }}</dd>
+        <dt>Color</dt>
+        <dd>{{ tasting.color }}</dd>
+        <dt>Clarity</dt>
+        <dd>{{ tasting.clarity }}</dd>
+        <dt>Nose</dt>
+        <dd>{{ tasting.nose }}</dd>
+        <dt>Body</dt>
+        <dd>{{ tasting.body }}</dd>
+        <dt>Acidity</dt>
+        <dd>{{ tasting.acidity }}</dd>
+        <dt>Tannin</dt>
+        <dd>{{ tasting.tannin }}</dd>
+        <dt>Sweetness</dt>
+        <dd>{{ tasting.sweetness }}</dd>
+        <dt>Fruitiness</dt>
+        <dd>{{ tasting.fruitiness }}</dd>
+        <dt>Finish</dt>
+        <dd>{{ tasting.finish }}</dd>
+        <dt>Did Like</dt>
+        <dd>{{ tasting.did_like }}</dd>
+        <dt>Worth Price</dt>
+        <dd>{{ tasting.worth_price }}</dd>
+        <dt>Would Buy Again</dt>
+        <dd>{{ tasting.would_buy_again }}</dd>
+
+
+    </div>
 </body>
 </html>

@@ -13,7 +13,15 @@ def index(request):
 def wine_detail(request, wine_id):
     try:
         this_wine = Wine.objects.get(pk=wine_id)
-        tastings = Tasting.objects.filter(wine = this_wine)
+        tastings = Tasting.objects.filter(wine=this_wine)
     except Wine.DoesNotExist:
         raise Http404("Wine not found!")
     return render(request, 'tasting/detail.html', {'wine': this_wine, 'tastings': tastings})
+
+
+def tasting_detail(request, tasting_id):
+    try:
+        this_tasting = Tasting.objects.get(pk=tasting_id)
+    except Tasting.DoesNotExist:
+        raise Http404("Tasting not found!")
+    return render(request, 'tasting/tasting_detail.html', {'tasting': this_tasting})
