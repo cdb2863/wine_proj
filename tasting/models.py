@@ -19,7 +19,6 @@ class Tasting(models.Model):
     color = models.CharField(max_length=200)
     clarity = models.CharField(max_length=200)
     nose = models.CharField(max_length=200)
-    nose_swirl = models.CharField(max_length=200)
     body = models.CharField(max_length=200)
     acidity = models.CharField(max_length=200)
     tannin = models.CharField(max_length=200)
