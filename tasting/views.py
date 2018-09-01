@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 from .models import Wine, Tasting
+from .forms import WineForm
 
 
 # Create your views here.
@@ -25,3 +26,8 @@ def tasting_detail(request, tasting_id):
     except Tasting.DoesNotExist:
         raise Http404("Tasting not found!")
     return render(request, 'tasting/tasting_detail.html', {'tasting': this_tasting})
+
+
+def add_wine(request):
+    form = WineForm()
+    return render(request, 'tasting/add_wine.html', {'form': form})
