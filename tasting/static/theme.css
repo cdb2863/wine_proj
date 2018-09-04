@@ -1,3 +1,8 @@
 ul {
     list-style: none;
 }
+
+.jumbotron {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
