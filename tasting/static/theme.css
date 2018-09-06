@@ -5,8 +5,17 @@ ul {
 .jumbotron {
     padding-top: 2%;
     padding-bottom: 2%;
+    background-color: #39a0ed;
 }
 
 .btn.btn-outline-success.header-button {
     margin-top: 10px;
+}
+
+a.detail {
+    color: #32388c;
+}
+
+a.detail:hover {
+    color: white;
 }
