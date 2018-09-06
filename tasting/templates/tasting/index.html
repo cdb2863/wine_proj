@@ -15,7 +15,10 @@
 <body>
     <div class="container">
         <div class="page-header">
-                <h1>Registered Wines</h1>
+            <div class="btn-toolbar float-right">
+                <a href="/add_wine/"><button type="button" class="btn btn-outline-success header-button">Add</button></a>
+            </div>
+            <h1>Wines</h1>
         </div>
         {% if wines %}
             <ul class="list-group">
