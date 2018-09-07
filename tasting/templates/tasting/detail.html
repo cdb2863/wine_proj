@@ -16,10 +16,13 @@
 
     <div class="container">
         <div class="page-header">
-            <h1>{{ wine }}</h1>
+            <div class="btn-toolbar float-right">
+                <a href="/wine/{{ wine.id }}/add_tasting/"><button type="button" class="btn btn-outline-success header-button">Add</button></a>
+            </div>
+            <h1>{{ wine.Name }}</h1>
         </div>
         {% if tastings %}
-            <h2>Recorded Tastings</h2>
+            <h3>Recorded Tastings</h3>
             <ul class="list-group">
             {% for t in tastings %}
                 <li class="list-group-item">
