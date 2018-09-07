@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 from .models import Wine, Tasting
-from .forms import WineForm
+from .forms import WineForm, TastingForm
 
 
 # Create your views here.
@@ -31,3 +31,9 @@ def tasting_detail(request, tasting_id):
 def add_wine(request):
     form = WineForm()
     return render(request, 'tasting/add_wine.html', {'form': form})
+
+
+def add_tasting(request, wine_id):
+    this_wine = Wine.objects.get(pk=wine_id)
+    form = TastingForm()
+    return render(request, 'tasting/add_tasting.html', {'wine': this_wine, 'form': form})
