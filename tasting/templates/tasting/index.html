@@ -28,6 +28,15 @@
                     </li>
                 {% endfor %}
             </ul>
+
+        {% else %}
+            <div class="jumbotron" role="alert">
+                <h1 class="display-4">Empty Database!</h1>
+            <p class="lead">No wines or tastings have been added to the database.</p>
+            <hr class="my-4">
+            <p>When the database is populated, a list of available wines will appear here.</p>
+                <a href="/add_wine/"><button role="button" class="btn btn-primary btn-lg">Add Wine</button></a>
+            </div>
         {% endif %}
     </div>
 

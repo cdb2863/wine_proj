@@ -5,6 +5,9 @@ ul {
 .jumbotron {
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+.jumbotron.tasting-detail {
     background-color: #39a0ed;
 }
 
