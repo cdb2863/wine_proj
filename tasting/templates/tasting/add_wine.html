@@ -10,6 +10,7 @@
 {% block content %}
     <div class="container">
         <h1>Add Wine</h1>
+{% if user.is_authenticated %}
         <div class="form-group">
         <form method="post">
             {% csrf_token %}
@@ -17,8 +18,16 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         </div>
-
     </div>
+{% else %}
+        <div class="jumbotron" role="alert">
+            <h1 class="display-4">Please Login!</h1>
+        <p class="lead">You must login to add a wine.</p>
+        <hr class="my-4">
+        <p>Once you are logged in, you'll be able to fill out a form to add a wine.</p>
+        <a href="/accounts/login/"><button role="button" class="btn btn-primary btn-lg">Login</button> </a>
+        </div>
+{% endif %}
 {% endblock %}
 </body>
 </html>
