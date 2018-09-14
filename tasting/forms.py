@@ -13,4 +13,9 @@ class TastingForm(forms.ModelForm):
 
     class Meta:
         model = Tasting
-        fields = ('date', 'hue', 'clarity', 'nose', 'body', 'acidity', 'tannin', 'sweetness', 'fruitiness', 'finish', 'did_like', 'worth_price', 'would_buy_again')
+        fields = ('date', 'hue', 'clarity', 'nose', 'flavor', 'body', 'acidity', 'tannin', 'sweetness', 'fruitiness', 'finish', 'did_like', 'worth_price', 'would_buy_again')
+        widgets = {
+            'date': forms.DateInput(
+                attrs={'type': 'date'}
+            )
+        }
