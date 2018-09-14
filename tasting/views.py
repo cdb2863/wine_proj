@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from .models import Wine, Tasting
 from .forms import WineForm, TastingForm
 
@@ -29,7 +29,18 @@ def tasting_detail(request, tasting_id):
 
 
 def add_wine(request):
-    form = WineForm()
+    form_class = WineForm
+    form = form_class(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            name = form.cleaned_data.get("Name")
+            vineyard = form.cleaned_data.get("Vineyard")
+            vintage = form.cleaned_data.get("Vintage")
+            color = form.cleaned_data.get("Color")
+            wine = Wine(Name=name, Vineyard=vineyard, Vintage=vintage, Color=color)
+            wine.save()
+            return HttpResponseRedirect('/')
+
     return render(request, 'tasting/add_wine.html', {'form': form})
 
 
