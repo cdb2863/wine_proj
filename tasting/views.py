@@ -46,5 +46,29 @@ def add_wine(request):
 
 def add_tasting(request, wine_id):
     this_wine = Wine.objects.get(pk=wine_id)
-    form = TastingForm()
+    form_class = TastingForm
+    form = form_class(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            date = form.cleaned_data.get("date")
+            hue = form.cleaned_data.get("hue")
+            clarity = form.cleaned_data.get("clarity")
+            nose = form.cleaned_data.get("nose")
+            flavor = form.cleaned_data.get("flavor")
+            body = form.cleaned_data.get("body")
+            acidity = form.cleaned_data.get("acidity")
+            tannin = form.cleaned_data.get("tannin")
+            sweetness = form.cleaned_data.get("sweetness")
+            fruitiness = form.cleaned_data.get("fruitiness")
+            finish = form.cleaned_data.get("finish")
+            did_like = form.cleaned_data.get("did_like")
+            worth_price = form.cleaned_data.get("worth_price")
+            would_buy_again = form.cleaned_data.get("would_buy_again")
+            tasting = Tasting(wine=this_wine, date=date, hue=hue, clarity=clarity, nose=nose, flavor=flavor,
+                              body=body, acidity=acidity, tannin=tannin, sweetness=sweetness, fruitiness=fruitiness,
+                              finish=finish, did_like=did_like, worth_price=worth_price,
+                              would_buy_again=would_buy_again)
+            tasting.save()
+            return HttpResponseRedirect('/')
+
     return render(request, 'tasting/add_tasting.html', {'wine': this_wine, 'form': form})
