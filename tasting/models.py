@@ -16,7 +16,7 @@ class Wine(models.Model):
 class Tasting(models.Model):
     wine = models.ForeignKey(Wine, on_delete=models.CASCADE)
     date = models.DateTimeField()
-    color = models.CharField(max_length=200)
+    hue = models.CharField(max_length=200)
     clarity = models.CharField(max_length=200)
     nose = models.CharField(max_length=200)
     body = models.CharField(max_length=200)
