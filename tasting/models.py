@@ -4,12 +4,12 @@ from django.db import models
 # Create your models here.
 class Wine(models.Model):
     Name = models.CharField(max_length=200)
-    Vineyard = models.CharField(max_length=200)
+    Producer = models.CharField(max_length=200)
     Vintage = models.CharField(max_length=4)
     Color = models.CharField(max_length=5)
 
     def __str__(self):
-        rtn = "{} - {} ({})".format(self.Vineyard, self.Name, self.Vintage)
+        rtn = "{} - {} ({})".format(self.Producer, self.Name, self.Vintage)
         return rtn
 
 

@@ -6,7 +6,7 @@ class WineForm(forms.ModelForm):
 
     class Meta:
         model = Wine
-        fields = ('Name', 'Vineyard', 'Vintage', 'Color')
+        fields = ('Name', 'Producer', 'Vintage', 'Color')
 
 
 class TastingForm(forms.ModelForm):

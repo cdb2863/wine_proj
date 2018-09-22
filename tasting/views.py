@@ -34,10 +34,10 @@ def add_wine(request):
     if request.method == 'POST':
         if form.is_valid():
             name = form.cleaned_data.get("Name")
-            vineyard = form.cleaned_data.get("Vineyard")
+            producer = form.cleaned_data.get("Producer")
             vintage = form.cleaned_data.get("Vintage")
             color = form.cleaned_data.get("Color")
-            wine = Wine(Name=name, Vineyard=vineyard, Vintage=vintage, Color=color)
+            wine = Wine(Name=name, Producer=producer, Vintage=vintage, Color=color)
             wine.save()
             return HttpResponseRedirect('/')
 
