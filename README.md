@@ -1,4 +1,4 @@
-# wine_proj
+# WineApp
 Interactive wine tasting app for WOW1.
 
 # Requirements
